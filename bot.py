@@ -1,3 +1,7 @@
+####
+# backend: https://github.com/scooredmars
+# front: toma5z-js
+
 
 from discord.ext import commands, ipc
 from decouple import config
