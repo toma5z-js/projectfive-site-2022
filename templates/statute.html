@@ -1,0 +1,130 @@
+{% extends "default.html" %}
+{% block title %}Regulamin{% endblock %}
+{% block content %}
+    <main class="main" style="display: block;">
+        <header class="header" id="header">
+            <nav class="navbar">
+                <a href="../">
+                    <img src="../static/img/logo.png" width="14%" style="display: block;">
+                </a>
+                <ul class="nav-menu"> 
+                    <li class="nav-item">
+                        <a href="/" class="nav-link"> Informacje </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/statute" class="nav-link"> Regulamin </a>
+                    </li>
+                    {% if authorized %}
+                        <li class="nav-item">
+                            <a href="/podania" class="nav-link"> Podania </a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a href="#kadra" class="nav-link"> Kadra </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="container__header">
+                <div class="container__header-logo">
+                    <img src="./images/logoV.png" class="header_logo" alt="">
+                </div>
+                <div class="container__header-content">
+                    <h2 class="container__header-text">Regulamin znajdziesz poniżej!</h2>
+                    <a href="#regulamin"> <button class="btn">PRZENIES!
+                    </button></a>
+                </div>
+            </div>
+        </header>
+        <section class="regulamin" id="regulamin">
+            <div class="regulamin-container">
+                <div class="reg-heading"> 
+                    <h1> Regulamin ProjectFive </h6>
+                    <h3> Prosimy o przestrzegnie zasady aby rozgrywka dla każdego byla przyjemna! </h2>
+                </div>
+                <div class="regarea">
+                    <div style="padding: 15px;     align-items: center;">
+                        <br> <br> <br> 
+                        <p> 1.1 - Posiadaj świadomość, że roleplay to nie tylko crime VS policja, oraz, że 
+                            bez broni palnej można odegrać akcje RP na wysokim poziomie. <br>      <br>                  
+                        <p> 1.2 - Jeżeli masz zamiar grać tylko tak, abyś ty miał z tego frajdę, nie zwracając uwagi
+                            na innych graczy, licz się z tym, że zostaniesz wykluczony z rozgrywki na naszym serwerze. <br> <br>       
+                        <p>2.1 - Na serwerze panuje HardRP - Oznacza to, że trzymamy się imersji jak najbardziej to możliwe. <br>     <br> 
+                        <p>2.2 - Administracja ma prawo karać za zachowania, które uzna za działanie na szkodę serwera,  
+                            bez względu na postanowienia regulaminu.      <br>            <br>               
+                        <p>2.3 - Każdy gracz serwera jest zobowiązany do przestrzegania regulaminu.
+                            Złamanie regulaminu przez drugą osobę nie upoważnia Ciebie do łamania go.<br> <br>         
+                        <p>2.4 - Wchodząc na serwer Akceptujesz Regulamin. 
+                            Nieznajomość regulaminu nie zwalnia Cię z jego przestrzegania.<br>     <br>     
+                        <p>2.5 - Rozgrywka na ProjectFIVE odwzorowuje życie współczesne w Los Santos.<br>   <br>     
+                        <p>2.6 - Mikrofon jest obowiązkowy. Musi być on sprawny.<br>     <br>    
+                        <p>2.7 -Jeśli widzisz jakiś bląd, lub mechanike działającą na szkode serwera, lub działającą
+                            na uzyskanie przewagi nad graczem masz OBOWIĄZEK zgłosić to w tickecie.<br>   <br>     
+                        <p>2.8 - Każdy crash bądź inny błąd który spowodował wyjście z serwera należy zgłosić na odpowiednim kanale <br>
+                            przedstawiając dowód w postaci screenshota oraz oznaczyć w nim osobę,
+                            z którą odgrywałeś/aś akcję RP.<br>     <br>    
+                        <p>2.9 - Od każdego bana, w którym jest zaznaczone, że można się odwołać,
+                            jest prawo do odwolania w tickecie. <br>     <br>                          
+                        <p>2.10 - Okres ochronny po restarcie wynosi 10 minut. (Wyjątek: kontynuowanie akcji RP)<br>     <br>    
+                        <p>2.11 - Nazwa postaci nie może zawierać wulgaryzmów ani promować treści nazistowskich.<br>     <br>    
+                        <p>2.12 - Na naszym serwerze obowiązują zasady Twitch’a. <br>       
+                            Odstępstwem od wymienionego punktu jest kreatywnie rozwinięta akcja RP.<br>   <br>     
+                        <p>2.13 - Szanujemy życie swojej postaci oraz jej zdrowie. (Zasada poszanowania życia)<br>   <br>     
+                        <p>2.14 - Pamiętaj że oprócz życia twoja postać musi szanować swoją wolność. 
+                            Jeżeli grozi Ci poważna kara to nieprzejmowanie się nią nie jest odgrywaniem Roleplay’u.<br>     <br>   
+                        <p>2.15 - Tylko administracja ma możliwość przerwania akcji RP. <br>     <br>  
+                        <p>2.16 - Osoba przychodząca na pomoc w celu zgłoszenia gracza ma obowiązek posiadać nagranie bądź zrzut ekranu w którym można ujrzeć łamanie regulaminu,<br>
+                            w przeciwnym wypadku sprawa może zostać umożona, lub każda strona medalu zostanie ukarana.<br>    <br>    
+                        <p>2.17 - Gracz jest zobowiązany do dokończenia akcji. 
+                                Jeśli dana sytuacja zostanie nieprawidłowo odegrana może zostać rozwiązana na pomocy po jej zakończeniu.<br>    <br>      
+                        <p>2.18 - Aby wykonać CK swojej postaci musisz podać administracji odpowiedni powód dlaczego chcesz to zrobić.<br>    <br>  
+                        <p>2.19 - Aby wykonać FCK postaci jednego z obywateli musisz skontaktować się z Administracją w tickecie. 
+                            Pamiętajmy, że do wykonania FCK potrzebny jest mocny powód.<br> <br>        
+                        <p>2.20 - Zakazuje się porwania obywateli bez mocnego powodu z takich miejsc jak:
+                            komenda, szpital itp. (IMERSJA)<br>     <br>    
+                        <p>2.21 - Na serwerze nie obowiązują GreenZony. Zamiast nich posiadamy strefy imersyjne i
+                            jest to każda strefa publiczna, na której wiemy, że jest dużo ludzi, ochrona bądź kamery<br>     <br>   
+                        <p>2.22 - Każda akcja hostylna w miejscach publicznych takich jak: 
+                                (szpital, komenda, mechanik itp) wiążę się z wyciągnięciem konsekwencji IC.<br>   <br>      
+                        <p>2.23 - Podczas rozgrywki zakazuje się przesiadywania na komunikatorze, <br>bądź używania każdej innej formy komunikacji z innymi osobami przebywających na serwerze, niż dostępny w grze chat i VoiceChat.
+                                (MetaGaming)                  <br>        <br>       
+                        <p>2.24 - Na serwerze panuje zakaz strzelania/zabijania bez inicjacji. (RDM)<br>     <br>      
+                        <p>2.25 - Na serwerze panje absolutny zakaz bojówek, i każde ich przejawy będą surowo banowane.<br>     <br>    
+                        <p>2.26 - Zakaz rozpoznawania ludzi tylko i wyłącznie po głosie. 
+                            Musi być kilka argumentów żeby kogoś można było rozpoznać np.<br>
+                            dana osoba nie zmieniła głosu oraz posiada strój w którym wcześniej była widziana.<br>   <br>      
+                        <p>2.27 - Zakaz zmuszania do przypisania auta / wypłacenia pieniędzy z banku.<br>     <br>     
+                        <p>2.28 - Jeśli pracujemy w legalnej pracy np. kurier, mamy obowiązek poruszania się pojazdami firmowymi oraz noszenia odpowiedniego stroju.     <br>   <br>   
+                        <p>2.29 - Zakazujemy okradania pojazdów lspd z broni długiej. <br>     <br>     
+                        <p>2.30 - Nie posiadamy limitów osób na akcje RP. <br>     <br>     
+                        <p>2.31 - Twoja postać musi mieć w miarę realistyczne imię i nazwisko dla umiejscowienia czyli Los Santos, USA. 
+                            Polskie imiona i nazwiska bez dobrej fabuły postaci Polskiej są zakazane.<br>     <br>     
+                        <p>2.32 - Okazywanie toksycznego zachowania, propagowanie nienawiści,<br> brak szacunku do drugiej osoby będzie rezultować wykluczeniem ze społeczności. <br>Jeśli masz jakiś problem, lub coś ci się nie podoba,<br> znajdź odpowiednie słowa aby to zaadresować administracji.<br> 
+                            Nie twórz kolejnych problemów, dram i nie szerz negatywnych uczuć.<br>     <br>      
+                        <p>2.33 - Pamiętaj RP, to nie tylko Crime vs Policja i bez "klamki" da się odegrać akcje na wysokim poziomie.<br>     <br>    
+                        <p>2.34 - Metazwroty są surowo zakazane.<br>     <br>    
+                        <p>2.35 - Wychodzenie z roli, lub CL'ka po akcji, która Ci się nie spodobała, będzie surowo karane.<br>    <br>     
+                        <p>2.36 - Przychodzenie na kanał pomocy bez konkretnego powodu może skutkować banem.<br>  <br>       
+                        <p>2.37 - Zwroty przedmiotów są możlwie jeżeli masz dowód na ich posiadanie, lub administrator wie, że je miałeś.<br><br>     <br>     <br>     <br>     
+                        <h1> Whitelist </h1>
+                        <p>  1. Aby zagrać na naszym serwerze wymagany jest sprawny mikrofon. </p><br>     
+                        <p>  2. Nie posiadamy ograniczenia wiekowego aby zdać whitelist.</p><br>     
+                        <p>  3. Wymagamy mutacji od każdej osoby, która chce zagrać na serwerze (Zdażają się wyjątki w skrajnych sytuacjach).</p><br>     
+                        <p>  4. Wymagamy podstaw roleplayu, jeżeli podczas pytania WL-Checker stwierdzi, że nie zdajesz, to pogódź się z tą decyzją.</p><br>     <br>     <br>    <br>     <br>      
+                        <h1> Regulami nalezy do ProjectFive.pl i zabrania się kopiowania go. </h1>
+                        <br><br><br><br><br><br>
+                        </p>
+                        <br><br><br><br>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>Copyright ©2022 ProjectFive | Design: <a href="">thom</a> | BackEnd: <a href="https://github.com/scooredmars">ScooredMars</a></p>
+        </footer>
+    </main>
+{% endblock %}

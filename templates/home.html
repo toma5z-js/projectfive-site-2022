@@ -1,0 +1,53 @@
+{% extends "default.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <main class="main" style="display: block;">
+        <header class="header" id="header">
+            <nav class="navbar">
+                <a href="../">
+                    <img src="../static/img/logo.png" width="14%" style="display: block;">
+                </a>
+                <ul class="nav-menu"> 
+                    <li class="nav-item">
+                        <a href="/" class="nav-link"> Informacje </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/statute" class="nav-link"> Regulamin </a>
+                    </li>
+                    {% if authorized %}
+                        <li class="nav-item">
+                            <a href="/applications.html" class="nav-link"> Podania </a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a href="#kadra" class="nav-link"> Kadra </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="container__header">
+                <div class="container__header-logo">
+                    <img src="../static/img/logoV.png" class="header_logo" alt="">
+                </div>
+                <div class="container__header-content">
+                    <h2 class="container__header-text">Jesteś gotowy na nasze uniwersum? <br> strona w budowie</h2>
+                    <a href="https://discord.gg/projectfive"> <button class="btn">Discord</button></a>
+                    {% if not authorized %}
+                        <a href="/login/"> <button class="btn1">Login</button></a>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+        <section class="last-section">
+            <h2 class="last-section-text">Stań się kim tylko chcesz, zagraj z nami!</h2>
+            <button class="btn">Dołącz</button>
+        </section>
+        <footer class="footer">
+            <p>Copyright ©2022 ProjectFive | Design: <a href="">thom</a> | BackEnd: <a href="https://github.com/scooredmars">ScooredMars</a></p>
+        </footer>
+    </main>
+{% endblock %}

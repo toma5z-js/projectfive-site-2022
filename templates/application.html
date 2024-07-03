@@ -1,0 +1,150 @@
+{% extends "default.html" %}
+{% block title %}Podania{% endblock %}
+{% block content %}
+    <main class="main" style="display: block;">
+        <header class="header" id="header">
+            <nav class="navbar">
+                <a href="../">
+                    <img src="../static/img/logo.png" width="14%" style="display: block;">
+                </a>
+                <ul class="nav-menu"> 
+                    <li class="nav-item">
+                        <a href="/" class="nav-link"> Informacje </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/statute" class="nav-link"> Regulamin </a>
+                    </li>
+                    {% if authorized %}
+                        <li class="nav-item">
+                            <a href="/podania" class="nav-link"> Podania </a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a href="#kadra" class="nav-link"> Kadra </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="container__header">
+                <div class="container__header-logo">
+                    <img src="../../images/logoV.png" class="header_logo" alt="">
+                </div>
+                <div class="container__header-content">
+                    <h2 class="container__header-text">Podanie na staff znajdziesz ponizej!</h2>
+                    <a href="#podanie"> <button class="btn">PRZENIES!
+                </button></a>
+
+                </div>
+            </div>
+        </header>
+        <section class="podanie" id="podanie">
+            <div class="bg-contact2" id="podaniee">
+                <div class="container-contact2">
+                    <div class="wrap-contact2">
+                        {% if embed_can_be_sended %}
+                            <form class="contact2-form validate-form" method="post" onsubmit="sendContact(event)">
+                                {{error}}
+                                <span class="contact2-form-title">
+                                    Podanie Support
+                                </span>
+                                <div class="wrap-input2 validate-input" data-validate="Potrzebujemy twojego prawdziwego maila">
+                                    <input class="input2" type="text" name="email" for="2" id="mail">
+                                    <span class="focus-input2" data-placeholder="Adres e-mail"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy podania tej informacji">
+                                    <input class="input2" type="text" name="imie" for="3" id="imie">
+                                    <span class="focus-input2" data-placeholder="Jak masz na imię? "></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy podania tej informacji">
+                                    <input class="input2" type="text" name="wiek" for="4" id="wiek">
+                                    <span class="focus-input2" data-placeholder="Ile masz lat?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy podania tej informacji">
+                                    <input class="input2" type="text" name="admin1" for="5" id="admin12">
+                                    <span class="focus-input2" data-placeholder="Byłes/aś już administratorem?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy podania tej informacji">
+                                    <input class="input2" type="text" name="mutacja" for="6" id="mutacja">
+                                    <span class="focus-input2" data-placeholder="Czy posiadasz mutacje?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy podania tej informacji">
+                                    <input class="input2" type="text" name="mikro" for="7" id="mikro">
+                                    <span class="focus-input2" data-placeholder="Czy twój mikrofon jest sprawny?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="dlaczegoty" for="8" id="dlaczegoty"></textarea>
+                                    <span class="focus-input2" data-placeholder="Dlaczego chciałbyś/aś zostać supportem na nasyzm serwerze?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="charakter" for="9" id="charakter"></textarea>
+                                    <span class="focus-input2" data-placeholder="Opisz swój charakter"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="czas" for="10" id="czas"></textarea>
+                                    <span class="focus-input2" data-placeholder="Ile godzin tygodniowo możesz poświęcic na administracje"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="relacje" for="11" id="relacje"></textarea>
+                                    <span class="focus-input2" data-placeholder="Jakie są Twoje relacje oraz nastawienie do graczy?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="grupa" for="12" id="grupa"></textarea>
+                                    <span class="focus-input2" data-placeholder="Jakie jest Twoje podejście do pracy w grupie?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="czemuty" for="13" id="czemuty"></textarea>
+                                    <span class="focus-input2" data-placeholder="Dlaczego powinniśmy wybrać właśnie Ciebie?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="corobisz1" for="14" id="corobisz1"></textarea>
+                                    <span class="focus-input2" data-placeholder="Co zrobisz, gdy nie będziesz wiedział jak postąpić z graczem w danej sytuacji?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="egotop" for="15" id="egotop"></textarea>
+                                    <span class="focus-input2" data-placeholder="Czy to, że jesteś supporterem oznacza, że możesz wywyższać się nad innymi?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="faworka" for="16" id="faworka"></textarea>
+                                    <span class="focus-input2" data-placeholder="Czy możesz traktować swojego kolegę inaczej, niż innych graczy?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="klotnia" for="17" id="klotnia"></textarea>
+                                    <span class="focus-input2" data-placeholder="Co zrobisz, kiedy zobaczysz kłótnię administracji?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="prowokacja" for="18" id="prowokacja"></textarea>
+                                    <span class="focus-input2" data-placeholder="Co zrobisz, gdy gracz będzie Cię prowokował?"></span>
+                                </div>
+                                <div class="wrap-input2 validate-input" data-validate="Wymagamy tej rubryki">
+                                    <textarea class="input2" name="kara" for="19" id="kara"></textarea>
+                                    <span class="focus-input2" data-placeholder="Czy przed nadaniem kary graczowi należy dokładnie sprawdzić raport, czy można wierzyć graczom na słowo?"></span>
+                                </div>
+                                <div class="container-contact2-form-btn">
+                                    <div class="wrap-contact2-form-btn">
+                                        <div class="contact2-form-bgbtn"></div>
+                                        <button class="contact2-form-btn" type="submit" id="form-submit" class="main-button" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                            Wyślij!
+                                        </button>
+                                        <script src="../../assets/js/webhook.js"></script>
+                                    </div>
+                                </div>
+                            </form>
+                        {% else %}
+                            nie moze zostac wyslany
+                        {% endif %}
+                        {% for message in get_flashed_messages() %}
+                            <div class="flash">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>Copyright ©2022 ProjectFive | Design: <a href="">thom</a></a> | BackEnd: <a href="https://github.com/scooredmars">ScooredMars</p>
+        </footer>
+    </main>
+{% endblock %}
